@@ -1,0 +1,2 @@
+AR_INIT_DB RCDATA "aradar.dat.init"
+AR_INIT_ICL RCDATA "aradar.icl.init"
