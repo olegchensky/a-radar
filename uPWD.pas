@@ -94,7 +94,7 @@ begin
   if Assigned(XML) then begin
     MS := TMemoryStream.Create;
     try
-      XML.SaveToStream(MS); //XML.SaveToFile(XMLFileName + '.xml');
+      XML.SaveToStream(MS); XML.SaveToFile(XMLFileName + '.xml');
       if Password = '' then sPWD := ARMasterPassword else sPWD := Password;
       Result := icsCryptDecryptStream(MS, sPWD, True);
       if Result then begin

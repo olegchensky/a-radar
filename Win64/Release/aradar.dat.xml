@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aradar>
+	<properties w="236" h="479" x="376" y="264" startMinimized="0" groupView="1" showObjectHints="1" appBarAutoHide="0" appBarEdge="5" stayOnTop="0">
+		<dataManager x="78" y="78" w="538" h="406" lastPageIdx="0"/>
+		<interval value="60"/>
+		<errorInterval value="5"/>
+	</properties>
+	<groups w="518" h="281" x="701" y="379">
+		<item id="2147483646" collapsed="0" iconID="1" w="582" h="406" x="2585" y="224">
+			<name value="General"/>
+			<memo value=""/>
+		</item>
+		<item id="2147483647" collapsed="0" iconID="0" w="599" h="907" x="2660" y="229">
+			<name value="Favorites"/>
+			<memo/>
+		</item>
+		<item id="2147483645" collapsed="1" iconID="2" w="582" h="406" x="2585" y="224">
+			<name value="Recycle Bin"/>
+			<memo value=""/>
+		</item>
+	</groups>
+	<hosts focused="{805C4419-C8E6-43E7-8F30-BFA3713C699B}">
+		<item id="{DB663EB3-D951-48CF-9747-7A541160F3DE}" groupId="2147483646" active="0" lastPageIdx="0"><protocolId value="{766992C4-3C7A-4199-B63B-D22DBE8AB637}"/><softId value="{CC3698A7-8D52-42A7-8CE0-16CBE5521981}"/><name value="ertyeryt"/><host value=""/><resources value=""/><port value=""/><interval value="60"/><errorInterval value="5"/><timeout value="2"/><username value=""/><password value=""/><domain value=""/><alerts value="0"/><alertId value=""/><checkModified value="0"/><sendReceive value="0"/><sendString value=""/><receiveString value=""/><showWindow value="0"/><runAsAdmin value="0"/><unsetModifies value="0"/><paramStrings1 value=""/><memo value=""/><modified value="0"/><selected value="0"/></item><item id="{94F98EB9-05F5-477A-81F1-AF246F24450F}" groupId="2147483646" active="0" lastPageIdx="0"><protocolId value="{766992C4-3C7A-4199-B63B-D22DBE8AB637}"/><softId value="{CC3698A7-8D52-42A7-8CE0-16CBE5521981}"/><name value="ertwtwre"/><host value=""/><resources value=""/><port value=""/><interval value="60"/><errorInterval value="5"/><timeout value="2"/><username value=""/><password value=""/><domain value=""/><alerts value="0"/><alertId value=""/><checkModified value="0"/><sendReceive value="0"/><sendString value=""/><receiveString value=""/><showWindow value="0"/><runAsAdmin value="0"/><unsetModifies value="0"/><paramStrings1 value=""/><memo value=""/><modified value="0"/><selected value="0"/></item><item id="{805C4419-C8E6-43E7-8F30-BFA3713C699B}" groupId="2147483646" active="0" lastPageIdx="0"><protocolId value="{F79AD4FF-1B24-4098-92EC-8B0B8CB4B730}"/><softId value="{0C3E2C65-B7FA-4874-A134-5B35B8BFE1BF}"/><name value="sdfgsdf"/><host value="111111"/><resources value=""/><port value=""/><sendString value=""/><receiveString value=""/><alertId value=""/><interval value="60"/><errorInterval value="5"/><timeout value="2"/><username value="uuuuuuuuuuuu"/><password value=""/><domain value=""/><checkModified value="0"/><sendReceive value="0"/><runAsAdmin value="0"/><alerts value="0"/><showWindow value="0"/><unsetModifies value="0"/><paramStrings1 value=""/><memo value=""/><modified value="0"/><selected value="1"/></item></hosts>
+	<protocols>
+		<item id="{F79AD4FF-1B24-4098-92EC-8B0B8CB4B730}">
+			<name value="UmVtb3RlIERlc2t0b3A="/>
+			<port value="3389"/>
+			<uriText/>
+			<scheme/>
+			<shortName value="UkRQ"/>
+			<locationId value="0"/>
+		</item>
+		<item id="{407A8DAF-2628-4441-93C5-72EE62A291CA}">
+			<name value="VmlydHVhbCBOZXR3b3JrIENvbXB1dGluZw=="/>
+			<port value="5900"/>
+			<uriText/>
+			<scheme/>
+			<shortName value="Vk5D"/>
+			<locationId value="0"/>
+		</item>
+		<item id="{766992C4-3C7A-4199-B63B-D22DBE8AB637}">
+			<name value="RmlsZSBUcmFuc2Zlcg=="/>
+			<port value="21"/>
+			<uriText value="ftp://"/>
+			<scheme value="ftp://"/>
+			<shortName value="RlRQ"/>
+			<locationId value="0"/>
+		</item>
+		<item id="{6CDFD875-A2EE-4C40-BC50-DF9D75BD106C}">
+			<name value="U2VjdXJlIEZpbGUgVHJhbnNmZXI="/>
+			<port value="22"/>
+			<uriText value="sftp://"/>
+			<scheme value="sftp://"/>
+			<shortName value="U0ZUUA=="/>
+			<locationId value="0"/>
+		</item>
+		<item id="{516FB366-0AD0-418D-918A-CCC8C1482311}">
+			<name value="V2ViLWJhc2VkIERpc3RyaWJ1dGVkIEF1dGhvcmluZyBhbmQgVmVyc2lvbmluZw=="/>
+			<port value="443"/>
+			<uriText value="https://"/>
+			<scheme value="https://"/>
+			<shortName value="V2ViREFW"/>
+			<locationId value="0"/>
+		</item>
+		<item id="{76D82A76-2BFB-4369-9900-23E82CE75FDD}">
+			<name value="SHlwZXJ0ZXh0IFRyYW5zZmVy"/>
+			<port value="80"/>
+			<uriText value="http://"/>
+			<scheme value="http://"/>
+			<shortName value="SFRUUA=="/>
+			<locationId value="0"/>
+		</item>
+		<item id="{8486D2F8-56A0-4280-8188-CBC4339A0BD7}">
+			<name value="SHlwZXJ0ZXh0IFRyYW5zZmVyIFNlY3VyZQ=="/>
+			<port value="443"/>
+			<uriText value="https://"/>
+			<scheme value="https://"/>
+			<shortName value="SFRUUFM="/>
+			<locationId value="0"/>
+		</item>
+		<item id="{6280DBB2-00F9-410B-AC95-8D2FD80FDB17}">
+			<name value="U2VjdXJlIFNoZWxs"/>
+			<port value="22"/>
+			<uriText/>
+			<scheme value="-ssh"/>
+			<shortName value="U1NI"/>
+			<locationId value="0"/>
+		</item>
+		<item id="{973D9D2F-481D-4C68-8304-9C81154BACD1}">
+			<name value="VGVsZXR5cGUgTmV0d29yaw=="/>
+			<port value="23"/>
+			<scheme/>
+			<shortName value="VGVsbmV0"/>
+			<locationId value="0"/>
+		</item>
+		<item id="{788CA056-CC30-484E-BBDB-9B9F4AAAAFE7}">
+			<name value="QmFja3VwIEZvbGRlcg=="/>
+			<shortName value="QkZT"/>
+			<port/>
+			<scheme/>
+			<locationId value="1"/>
+		</item>
+		<item id="{6054D056-7F66-40E7-94B9-BFFEA6BCE08C}">
+			<name value="T3BlbiBSZWdpc3RyeSBLZXk="/>
+			<shortName value="T1JLUw=="/>
+			<port/>
+			<scheme/>
+			<locationId value="2"/>
+		</item>
+		<item id="{2617390D-B6E7-4BA4-A1D0-68A2ADB77A75}">
+			<name value="T3BlbiBGb2xkZXI="/>
+			<shortName value="T0ZM"/>
+			<locationId value="1"/>
+			<port/>
+			<scheme/>
+		</item>
+	</protocols>
+	<software>
+		<item id="{FAED4D3F-BA4D-4E37-9F16-60E7BD993707}">
+			<name value="SW50ZXJuZXQgRXhwbG9yZXI="/>
+			<path value="QzpcUHJvZ3JhbSBGaWxlc1xpbnRlcm5ldCBleHBsb3JlclxpZXhwbG9yZS5leGU="/>
+			<params value="JVNFTEYuVVJJJQ=="/>
+			<supported value="1"/>
+			<protocols>
+				<item value="{76D82A76-2BFB-4369-9900-23E82CE75FDD}"/>
+				<item value="{8486D2F8-56A0-4280-8188-CBC4339A0BD7}"/>
+			</protocols>
+			<paramStrings1/>
+			<url/>
+			<memo/>
+		</item>
+		<item id="{0C3E2C65-B7FA-4874-A134-5B35B8BFE1BF}">
+			<name value="TWljcm9zb2Z0IFJlbW90ZSBEZXNrdG9w"/>
+			<path value="QzpcV2luZG93c1xTeXN0ZW0zMlxtc3RzYy5leGU="/>
+			<params value="JVNFTEYuUEFSQU1GSUxFXzEl"/>
+			<supported value="1"/>
+			<protocols>
+				<item value="{F79AD4FF-1B24-4098-92EC-8B0B8CB4B730}"/>
+			</protocols>
+			<paramStrings1 value="YWRtaW5pc3RyYXRpdmUgc2Vzc2lvbjppOjANCmFsbG93IGRlc2t0b3AgY29tcG9zaXRpb246aTow&#xA;DQphbGxvdyBmb250IHNtb290aGluZzppOjANCmFsdGVybmF0ZSBzaGVsbDpzOg0KYXVkaW9jYXB0&#xA;dXJlbW9kZTppOjANCmF1ZGlvbW9kZTppOjINCmF1ZGlvcXVhbGl0eW1vZGU6aTowDQphdXRoZW50&#xA;aWNhdGlvbiBsZXZlbDppOjANCmF1dG9yZWNvbm5lY3QgbWF4IHJldHJpZXM6aToyMA0KYXV0b3Jl&#xA;Y29ubmVjdGlvbiBlbmFibGVkOmk6MQ0KYmFuZHdpZHRoYXV0b2RldGVjdDppOjENCmJpdG1hcGNh&#xA;Y2hlcGVyc2lzdGVuYWJsZTppOjENCmJpdG1hcGNhY2hlc2l6ZTppOjE1MDANCmNvbXByZXNzaW9u&#xA;Omk6MQ0KY29ubmVjdCB0byBjb25zb2xlOmk6MA0KY29ubmVjdGlvbiB0eXBlOmk6Nw0KZGVza3Rv&#xA;cCBzaXplIGlkOmk6NA0KZGVza3RvcGhlaWdodDppOjYwMA0KZGVza3RvcHdpZHRoOmk6ODAwDQpk&#xA;ZXZpY2VzdG9yZWRpcmVjdDpzOioNCmRpc2FibGUgY3RybCthbHQrZGVsOmk6MQ0KZGlzYWJsZSBj&#xA;dXJzb3Igc2V0dGluZzppOjANCmRpc2FibGUgZnVsbCB3aW5kb3cgZHJhZzppOjENCmRpc2FibGUg&#xA;bWVudSBhbmltczppOjENCmRpc2FibGUgdGhlbWVzOmk6MA0KZGlzYWJsZSB3YWxscGFwZXI6aTow&#xA;DQpkaXNhYmxlY29ubmVjdGlvbnNoYXJpbmc6aTowDQpkaXNhYmxlcmVtb3RlYXBwY2Fwc2NoZWNr&#xA;Omk6MA0KZGlzYWJsZXByaW50ZXJyZWRpcmVjdGlvbjppOjANCmRpc2FibGVjbGlwYm9hcmRyZWRp&#xA;cmVjdGlvbjppOjANCmRpc3BsYXljb25uZWN0aW9uYmFyOmk6MQ0KZG9tYWluOnM6JVNFTEYuRE9N&#xA;QUlOJQ0KZHJpdmVzdG9yZWRpcmVjdDpzOioNCmVuYWJsZWNyZWRzc3BzdXBwb3J0Omk6MQ0KZW5h&#xA;Ymxlc3VwZXJwYW46aTowDQplbmFibGV3b3Jrc3BhY2VyZWNvbm5lY3Q6aTowDQpmdWxsIGFkZHJl&#xA;c3M6czolU0VMRi5IT1NUJTolU0VMRi5QT1JUJQ0KZ2F0ZXdheWJyb2tlcmluZ3R5cGU6aTowDQpn&#xA;YXRld2F5Y3JlZGVudGlhbHNzb3VyY2U6aTo0DQpnYXRld2F5aG9zdG5hbWU6czoNCmdhdGV3YXlw&#xA;cm9maWxldXNhZ2VtZXRob2Q6aToxDQpnYXRld2F5dXNhZ2VtZXRob2Q6aTo0DQprZGNwcm94eW5h&#xA;bWU6czoNCmtleWJvYXJkaG9vazppOjINCmxvYWRiYWxhbmNlaW5mbzpzOg0KbmVnb3RpYXRlIHNl&#xA;Y3VyaXR5IGxheWVyOmk6MQ0KbmV0d29ya2F1dG9kZXRlY3Q6aToxDQpwYXNzd29yZCA1MTpiOiVT&#xA;RUxGLkNSWVBUX1BBU1NXT1JEJQ0KcGluY29ubmVjdGlvbmJhcjppOjENCnByb21wdCBmb3IgY3Jl&#xA;ZGVudGlhbHM6aTowDQpwcm9tcHQgZm9yIGNyZWRlbnRpYWxzIG9uIGNsaWVudDppOjANCnByb21w&#xA;dGNyZWRlbnRpYWxvbmNlOmk6MA0KcHVibGljIG1vZGU6aTowDQpyZGdpc2tkY3Byb3h5Omk6MA0K&#xA;cmVkaXJlY3RjbGlwYm9hcmQ6aToxDQpyZWRpcmVjdGNvbXBvcnRzOmk6MA0KcmVkaXJlY3RkaXJl&#xA;Y3R4Omk6MQ0KcmVkaXJlY3Rkcml2ZXM6aToxDQpyZWRpcmVjdHBvc2RldmljZXM6aTowDQpyZWRp&#xA;cmVjdHByaW50ZXJzOmk6MA0KcmVkaXJlY3RzbWFydGNhcmRzOmk6MA0KcmVtb3RlYXBwbGljYXRp&#xA;b25jbWRsaW5lOnM6DQpyZW1vdGVhcHBsaWNhdGlvbmZpbGU6czoNCnJlbW90ZWFwcGxpY2F0aW9u&#xA;ZXhwYW5kY21kbGluZTppOjENCnJlbW90ZWFwcGxpY2F0aW9uZXhwYW5kd29ya2luZ2RpcjppOjEN&#xA;CnJlbW90ZWFwcGxpY2F0aW9uaWNvbjpzOg0KcmVtb3RlYXBwbGljYXRpb25tb2RlOmk6MA0KcmVt&#xA;b3RlYXBwbGljYXRpb25uYW1lOnM6DQpyZW1vdGVhcHBsaWNhdGlvbnByb2dyYW06czoNCnNjcmVl&#xA;biBtb2RlIGlkOmk6Mg0Kc2VydmVyIHBvcnQ6aTolU0VMRi5QT1JUJQ0Kc2Vzc2lvbiBicHA6aToz&#xA;Mg0Kc2hlbGwgd29ya2luZyBkaXJlY3Rvcnk6czoNCnNtYXJ0IHNpemluZzppOjENCnNwYW4gbW9u&#xA;aXRvcnM6aTowDQpzdXBlcnBhbmFjY2VsZXJhdGlvbmZhY3RvcjppOjENCnVzZSByZWRpcmVjdGlv&#xA;biBzZXJ2ZXIgbmFtZTppOjANCnVzYmRldmljZXN0b3JlZGlyZWN0OnM6DQp1c2UgbXVsdGltb246&#xA;aTowDQp1c2VybmFtZTpzOiVTRUxGLkZVTExfVVNFUk5BTUUlDQp2aWRlb3BsYXliYWNrbW9kZTpp&#xA;OjENCndpbnBvc3N0cjpzOg=="/>
+			<url value="aHR0cHM6Ly93d3cuZG9ua3oubmwvb3ZlcnZpZXctcmRwLWZpbGUtc2V0dGluZ3Mv"/>
+			<memo value="aHR0cHM6Ly93d3cuZG9ua3oubmwvb3ZlcnZpZXctcmRwLWZpbGUtc2V0dGluZ3Mv"/>
+			<defaultParamFile1/>
+		</item>
+		<item id="{A32CABB0-DD17-4A3C-9798-A1C72D36CF8E}">
+			<name value="VGhpZ2h0Vk5D"/>
+			<path value="QzpcUHJvZ3JhbSBGaWxlc1xUaWdodFZOQ1x0dm52aWV3ZXIuZXhl"/>
+			<params value="LW9wdGlvbnNmaWxlPSIlU0VMRi5QQVJBTUZJTEVfMSUiIC1wYXNzd29yZD0lU0VMRi5QQVNTV09S&#xA;RCU="/>
+			<supported value="0"/>
+			<protocols>
+				<item value="{407A8DAF-2628-4441-93C5-72EE62A291CA}"/>
+			</protocols>
+			<paramStrings1 value="W2Nvbm5lY3Rpb25dDQpob3N0PSVTRUxGLkhPU1QlDQpwb3J0PSVTRUxGLlBPUlQlDQpwYXNzd29y&#xA;ZD0lU0VMRi5QQVNTV09SRCUNCg0KW29wdGlvbnNdDQp1c2VfZW5jb2RpbmdfMT0xDQpjb3B5cmVj&#xA;dD0xDQp2aWV3b25seT0wDQpmdWxsc2NyZWVuPTANCjhiaXQ9MA0Kc2hhcmVkPTENCmJlbGxkZWlj&#xA;b25pZnk9MA0KZGlzYWJsZWNsaXBib2FyZD0wDQpzd2FwbW91c2U9MA0KZml0d2luZG93PTANCmN1&#xA;cnNvcnNoYXBlPTENCm5vcmVtb3RlY3Vyc29yPTANCnByZWZlcnJlZF9lbmNvZGluZz03DQpjb21w&#xA;cmVzc2xldmVsPS0xDQpxdWFsaXR5PTYNCmxvY2FsY3Vyc29yPTENCnNjYWxlX2Rlbj0xDQpzY2Fs&#xA;ZV9udW09MQ0KbG9jYWxfY3Vyc29yX3NoYXBlPTE="/>
+			<url value="aHR0cHM6Ly93d3cudGlnaHR2bmMuY29tL3ZuY3ZpZXdlci4xLnBocA=="/>
+			<memo value="aHR0cHM6Ly93d3cudGlnaHR2bmMuY29tLw=="/>
+		</item>
+		<item id="{CC3698A7-8D52-42A7-8CE0-16CBE5521981}">
+			<name value="VG90YWwgQ29tbWFuZGVy"/>
+			<path value="QzpcVE9UQUxDTURcVE9UQUxDTUQ2NC5leGU="/>
+			<params value="L04gL08gL1QgJVNFTEYuVVNFUkRFRl9TVFJJTkdfMSU9JVNFTEYuVVJJJSAvST0iJUFQUC5QQVRI&#xA;JVx3aW5jbWQuaW5pIiAvRj0iJUFQUC5QQVRIJVx3Y3hfZnRwLmluaSI="/>
+			<supported value="0"/>
+			<protocols>
+				<item value="{766992C4-3C7A-4199-B63B-D22DBE8AB637}"/>
+				<item value="{6CDFD875-A2EE-4C40-BC50-DF9D75BD106C}"/>
+				<item value="{2617390D-B6E7-4BA4-A1D0-68A2ADB77A75}"/>
+			</protocols>
+			<memo value="aHR0cHM6Ly93d3cuZ2hpc2xlci5jb20v"/>
+			<paramStrings1 value="L1I="/>
+		</item>
+		<item id="{F3AC316D-05EF-435D-817A-72C84B1566BD}">
+			<name value="U3lzdGVtIEJyb3dzZXI="/>
+			<path/>
+			<params value="JVNFTEYuVVJJJQ=="/>
+			<supported value="0"/>
+			<protocols>
+				<item value="{76D82A76-2BFB-4369-9900-23E82CE75FDD}"/>
+				<item value="{8486D2F8-56A0-4280-8188-CBC4339A0BD7}"/>
+			</protocols>
+			<paramStrings1/>
+			<memo/>
+		</item>
+		<item id="{952F0426-6403-4F6D-A142-6BFB8AAF7FBA}">
+			<name value="VGVsbmV0"/>
+			<path value="dGVsbmV0LmV4ZQ=="/>
+			<params value="JVNFTEYuSE9TVCUgJVNFTEYuUE9SVCU="/>
+			<protocols>
+				<item value="{973D9D2F-481D-4C68-8304-9C81154BACD1}"/>
+			</protocols>
+			<paramStrings1/>
+			<memo/>
+		</item>
+		<item id="{F449B3E7-7488-4AC0-90CE-5CA8716873E5}">
+			<name value="V2luU0NQ"/>
+			<path value="V2luU0NQLmV4ZQ=="/>
+			<params value="JVNFTEYuVVJJJQ=="/>
+			<protocols>
+				<item value="{766992C4-3C7A-4199-B63B-D22DBE8AB637}"/>
+				<item value="{6CDFD875-A2EE-4C40-BC50-DF9D75BD106C}"/>
+				<item value="{516FB366-0AD0-418D-918A-CCC8C1482311}"/>
+				<item value="{6280DBB2-00F9-410B-AC95-8D2FD80FDB17}"/>
+			</protocols>
+			<paramStrings1/>
+			<url/>
+			<memo value="aHR0cHM6Ly93aW5zY3AubmV0L2VuZy9kb3dubG9hZC5waHA="/>
+		</item>
+		<item id="{CA0B831C-9B27-4412-986D-E89953D4738D}">
+			<name value="UHVUVFk="/>
+			<path value="QzpcUHJvZ3JhbSBGaWxlc1xQdVRUWVxwdXR0eS5leGU="/>
+			<params value="LXNzaCAlU0VMRi5IT1NUJSAtbCAlU0VMRi5VU0VSTkFNRSUgLXB3ICVTRUxGLlBBU1NXT1JEJQ=="/>
+			<url/>
+			<protocols>
+				<item value="{6280DBB2-00F9-410B-AC95-8D2FD80FDB17}"/>
+			</protocols>
+			<paramStrings1/>
+			<memo/>
+		</item>
+		<item id="{2CD2F53F-A052-4EC4-BE15-4655D287FF15}">
+			<name value="V2luZG93cyBFeHBsb3Jlcg=="/>
+			<path value="QzpcV2luZG93c1xleHBsb3Jlci5leGU="/>
+			<params value="L24sIiVTRUxGLlBBVEglIg=="/>
+			<memo/>
+			<protocols>
+				<item value="{766992C4-3C7A-4199-B63B-D22DBE8AB637}"/>
+				<item value="{2617390D-B6E7-4BA4-A1D0-68A2ADB77A75}"/>
+			</protocols>
+			<paramStrings1/>
+		</item>
+		<item id="{5C44F18E-B4F0-47F2-BCDA-7A37E467B8F8}">
+			<name value="Ny16aXA="/>
+			<path value="QzpcUHJvZ3JhbSBGaWxlc1w3LVppcFw3ei5leGU="/>
+			<params value="YSAtbXg5IC1tbXQ4IC1zc3cgLXIgIiVTRUxGLlVTRVJERUZfU1RSSU5HXzElXCVTRUxGLlJFU09V&#xA;UkNFUyUuN3oiICIlU0VMRi5QQVRIJVwqLioi"/>
+			<memo value="aHR0cDovL3d3dy43LXppcC5vcmcv"/>
+			<protocols>
+				<item value="{788CA056-CC30-484E-BBDB-9B9F4AAAAFE7}"/>
+			</protocols>
+			<paramStrings1/>
+			<defaultParamFile1/>
+		</item>
+		<item id="{B8BCD836-718A-48DD-9FF4-781A89E9DD78}">
+			<name value="UmVnSnVtcA=="/>
+			<path value="cmVnanVtcC5leGU="/>
+			<params value="IiVTRUxGLlBBVEglIg=="/>
+			<memo value="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvc3lzaW50ZXJuYWxzL2Rvd25sb2Fkcy9y&#xA;ZWdqdW1w"/>
+			<protocols>
+				<item value="{6054D056-7F66-40E7-94B9-BFFEA6BCE08C}"/>
+			</protocols>
+			<paramStrings1/>
+		</item>
+	</software>
+	<credentials/>
+	<alerts/>
+</aradar>

@@ -51,6 +51,12 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
@@ -60,11 +66,11 @@
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <VerInfo_Locale>1049</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <DCC_ExeOutput>D:\a-tools.com\0\A70F4593F-A711-4C1F-BEAF-FD480A8193A3</DCC_ExeOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_UnitSearchPath>D:\Components\TurboPack\DOSCommand\Source;D:\Components\TurboPack\PNGComponents\Source;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <Icon_MainIcon>aradar_Icon1.ico</Icon_MainIcon>
+        <Icon_MainIcon>aradar_Icon.ico</Icon_MainIcon>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DataSnapServerMidas;DBXDb2Driver;DBXInterBaseDriver;vclactnband;vclFireDAC;SysToolsDBDR;emsclientfiredac;DataSnapFireDAC;svnui;tethering;FireDACADSDriver;DBXMSSQLDriver;SysToolsDR;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;PngComponentsD;vcltouch;vcldb;bindcompfmx;svn;DBXOracleDriver;inetdb;EssentialsDR;VirtualTreesDR;emsedge;FireDACIBDriver;fmx;fmxdae;EasyListviewD;VirtualShellToolsD;FireDACDBXDriver;dbexpress;IndyCore;vclx;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;DataSnapConnectors;VCLRESTComponents;soapserver;vclie;bindengine;DBXMySQLDriver;FireDACOracleDriver;CloudService;FireDACMySQLDriver;DBXFirebirdDriver;FireDACCommonODBC;FireDACCommonDriver;ics;DataSnapClient;inet;bindcompdbx;IndyIPCommon;vcl;DBXSybaseASEDriver;IndyIPServer;IndySystem;FireDACDb2Driver;dsnapcon;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;FireDAC;emshosting;FireDACSqliteDriver;FireDACPgDriver;FireDACASADriver;DBXOdbcDriver;FireDACTDataDriver;soaprtl;DbxCommonDriver;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;vclwinx;FireDACDSDriver;rtl;OverbyteIcsD101Run;DbxClientDriver;DBXSybaseASADriver;CustomIPTransport;vcldsnap;DOSCommandDR;SynEditDR;bindcomp;appanalytics;DBXInformixDriver;IndyIPClient;bindcompvcl;dbxcds;VclSmp;adortl;FireDACODBCDriver;DataSnapIndy10ServerTransport;MPCommonLibD;dsnapxml;DataSnapProviderClient;dbrtl;inetdbxpress;FireDACMongoDBDriver;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
@@ -75,7 +81,7 @@
         <AppDPIAwarenessMode>PerMonitor</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <Icon_MainIcon>aradar_Icon2.ico</Icon_MainIcon>
+        <Icon_MainIcon>aradar_Icon.ico</Icon_MainIcon>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BT_BuildType>Debug</BT_BuildType>
@@ -97,7 +103,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
-        <Icon_MainIcon>aradar_Icon1.ico</Icon_MainIcon>
+        <Icon_MainIcon>aradar_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <Icon_MainIcon>aradar_Icon2.ico</Icon_MainIcon>
@@ -120,6 +126,10 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <OutputExt>x32.exe</OutputExt>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <VerInfo_Build>39</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Censka IT-Services;FileDescription=A-Radar;FileVersion=1.1.9.39;InternalName=A-Radar;LegalCopyright=;LegalTrademarks=;OriginalFilename=aradar.exe;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=A-Radar;ProductVersion=1.1;Comments=Powered by Oleg Chensky</VerInfo_Keys>
     </PropertyGroup>
     <Import Project="C:\Temp\x.optset" Condition="'$(Cfg_2_Win32)'!='' And Exists('C:\Temp\x.optset')"/>
     <ItemGroup>

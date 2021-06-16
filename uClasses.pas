@@ -120,12 +120,13 @@ const
 const
   APP_ARGROUP_ID_FAVORITES                              = MaxInt;
   APP_ARGROUP_ID_GENERAL                                = MaxInt - 1;
-  APP_ARGROUP_ID_NORMAL                                 = MaxInt - 2;
+  APP_ARGROUP_ID_RECYCLE_BIN                            = MaxInt - 2;
+  APP_ARGROUP_ID_NORMAL                                 = MaxInt - 3;
 
   APP_ARGROUP_ID_FIRSTRESERVED                          = APP_ARGROUP_ID_NORMAL;
 
 const
-  APP_ARSERVICE_MESSAGE_ID_DELETE_HOSTS                 = 0;
+  APP_ARSERVICE_MESSAGE_ID_EMPTY_RECYCLE_BIN            = 0;
   APP_ARSERVICE_MESSAGE_ID_DELETE_GROUPS                = 1;
 
 type
@@ -448,10 +449,11 @@ begin
   end;
 end;
 
-function CreateCMDParamFile(const ContentString: String): String;
+function CreateCMDParamFile(const FileNamePart, ContentString: String): String;
  var SS: TStringStream;
 begin
   Result := icsGetTempFileName('.tmp');
+  Result := IncludeTrailingPathDelimiter(ExtractFilePath(Result)) + FileNamePart + ExtractFileName(Result);
   SS := TStringStream.Create(ContentString);
   try
     SS.SaveToFile(Result);
@@ -1062,7 +1064,7 @@ begin
 
         FOwner.BuildARDataRec(AROD);
         if Pos(APP_TEMPLATE_PARAMFILE1, AROD.CMDParams) > 0 then begin
-          ParamsFileName1 := CreateCMDParamFile(AROD.DefaultParamsStrings1);
+          ParamsFileName1 := CreateCMDParamFile(AROD.Username, AROD.DefaultParamsStrings1);
           AROD.CMDParams := icsGetReplacedString(AROD.CMDParams, APP_TEMPLATE_PARAMFILE1, ParamsFileName1);
         end;
 

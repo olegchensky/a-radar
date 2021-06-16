@@ -133,6 +133,10 @@ type
     ActionStayOnTop: TAction;
     MainItemStayOnTop: TMenuItem;
     NotificationCenter1: TNotificationCenter;
+    ActionMoveToRecycleBin: TAction;
+    ActionEmptyRecycleBin: TAction;
+    N9: TMenuItem;
+    ItemEmptyRecycleBin: TMenuItem;
     procedure ActionCloseExecute(Sender: TObject);
     procedure ActionHostEditExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -197,13 +201,13 @@ type
     procedure ActionGroupMoveUpExecute(Sender: TObject);
     procedure ActionGroupMoveDownExecute(Sender: TObject);
     procedure ActionGroupMoveUpUpdate(Sender: TObject);
-    procedure ListViewMainInfoTip(Sender: TObject; Item: TListItem;
-      var InfoTip: string);
+    procedure ListViewMainInfoTip(Sender: TObject; Item: TListItem; var InfoTip: string);
     procedure ActionStayOnTopUpdate(Sender: TObject);
     procedure ActionStayOnTopExecute(Sender: TObject);
-    procedure NotificationCenter1ReceiveLocalNotification(Sender: TObject;
-      ANotification: TNotification);
     procedure ApplicationEvents1Deactivate(Sender: TObject);
+    procedure ActionMoveToRecycleBinExecute(Sender: TObject);
+    procedure ActionEmptyRecycleBinExecute(Sender: TObject);
+    procedure ActionEmptyRecycleBinUpdate(Sender: TObject);
   private
     FModalCounter: Integer;
     FListViewWndProc: TWndMethod;
@@ -536,10 +540,7 @@ procedure TfrmMain.ActionHostDeleteExecute(Sender: TObject);
  var I: Integer;
 begin
   inherited;
-  if MessageBox(Handle, PChar(ICSLanguagesMessages.CurrentStrings[APP_ARSERVICE_MESSAGE_ID_DELETE_HOSTS]), PChar(Application.Title), MB_YESNO + MB_ICONQUESTION + MB_DEFBUTTON2) = ID_YES then begin
-    for I := 0 to ListViewMain.Items.Count - 1 do if ListViewMain.Items[I].Selected then DeleteListItemData(ListViewMain.Items[I]);
-    ListViewMain.DeleteSelected;
-  end;
+  SelectedMoveToGroup(APP_ARGROUP_ID_RECYCLE_BIN);
 end;
 
 procedure TfrmMain.ActionHostDeleteUpdate(Sender: TObject);
@@ -557,7 +558,7 @@ begin
   inherited;
   if Assigned(ListViewMain.Selected) then SelectedGroupID := ListViewMain.Selected.GroupID else SelectedGroupID := -1;
   for I := (Sender as TMenuItem).Count - 1 downto 0 do if (Sender as TMenuItem).Items[I].HelpContext = 1 then (Sender as TMenuItem).Delete(I);
-  for I := 0 to ListViewMain.Groups.Count - 1 do if ListViewMain.Groups[I].GroupID <> APP_ARGROUP_ID_FAVORITES then begin
+  for I := 0 to ListViewMain.Groups.Count - 1 do if (ListViewMain.Groups[I].GroupID <> APP_ARGROUP_ID_FAVORITES) and (ListViewMain.Groups[I].GroupID <> APP_ARGROUP_ID_RECYCLE_BIN) then begin
     MI := TMenuItem.Create(Self);
     MI.OnClick := OnClickMoveToExistedExecute;
     MI.Caption := ListViewMain.Groups[I].Header;
@@ -567,6 +568,14 @@ begin
     MI.HelpContext := 1;
     (Sender as TMenuItem).Add(MI);
   end;
+  MI := TMenuItem.Create(Self);
+  MI.Caption := '-';
+  (Sender as TMenuItem).Add(MI);
+  MI := TMenuItem.Create(Self);
+  MI.Action := ActionMoveToRecycleBin;
+  MI.ImageIndex := -1;//ListViewMain.Groups[GetGroupIndex(APP_ARGROUP_ID_RECYCLE_BIN)].TitleImage;
+  MI.Enabled := (SelectedGroupID <> APP_ARGROUP_ID_RECYCLE_BIN);
+  (Sender as TMenuItem).Add(MI);
 end;
 
 function TfrmMain.IsEmptyGroup(GroupID: Integer): Boolean;
@@ -606,6 +615,28 @@ begin
     frmNetworkTools.NetworkTool := NetworkTool;
     frmNetworkTools.Show;
   end;
+end;
+
+procedure TfrmMain.ActionEmptyRecycleBinExecute(Sender: TObject);
+begin
+  inherited;
+  if MessageBox(Handle, PChar(ICSLanguagesMessages.CurrentStrings[APP_ARSERVICE_MESSAGE_ID_EMPTY_RECYCLE_BIN]), PChar(Application.Title), MB_YESNO + MB_ICONQUESTION + MB_DEFBUTTON2) = ID_YES then begin
+    ListViewMain.Items.BeginUpdate;
+    try
+      for var I: Integer := ListViewMain.Items.Count - 1 downto 0 do if ListViewMain.Items[I].GroupID = APP_ARGROUP_ID_RECYCLE_BIN then begin
+        DeleteListItemData(ListViewMain.Items[I]);
+        ListViewMain.Items[I].Delete;
+      end;
+    finally
+      ListViewMain.Items.EndUpdate;
+    end;
+  end;
+end;
+
+procedure TfrmMain.ActionEmptyRecycleBinUpdate(Sender: TObject);
+begin
+  inherited;
+  (Sender as TAction).Enabled := not IsEmptyGroup(APP_ARGROUP_ID_RECYCLE_BIN);
 end;
 
 procedure TfrmMain.ActionExecutePingExecute(Sender: TObject);
@@ -876,6 +907,12 @@ begin
   (Sender as TAction).Enabled := (ListViewMain.SelCount > 0) and (ListViewMain.Groups.NextGroupID < APP_ARGROUP_ID_FIRSTRESERVED);
 end;
 
+procedure TfrmMain.ActionMoveToRecycleBinExecute(Sender: TObject);
+begin
+  inherited;
+  SelectedMoveToGroup(APP_ARGROUP_ID_RECYCLE_BIN);
+end;
+
 procedure TfrmMain.ActionPropertiesExecute(Sender: TObject);
 begin
   inherited;
@@ -1068,29 +1105,24 @@ begin
 end;
 
 procedure TfrmMain.NormalizeGroups;
- var
-   I: Integer;
-   bExists: Boolean;
-begin
-  bExists := False;
-  for I := 0 to ListViewMain.Groups.Count - 1 do begin
-    bExists := (ListViewMain.Groups[I].GroupID = APP_ARGROUP_ID_GENERAL);
-    if bExists then Break;
-  end;
-  if not bExists then XMLCreateGroup(ICSLanguagesGroups.CurrentStrings[MaxInt - APP_ARGROUP_ID_GENERAL], APP_ARGROUP_ID_GENERAL, False);
 
-  bExists := False;
-  for I := 0 to ListViewMain.Groups.Count - 1 do begin
-    bExists := (ListViewMain.Groups[I].GroupID = APP_ARGROUP_ID_FAVORITES);
-    if bExists then Break;
-  end;
-  if not bExists then XMLCreateGroup(ICSLanguagesGroups.CurrentStrings[MaxInt - APP_ARGROUP_ID_FAVORITES], APP_ARGROUP_ID_FAVORITES, False);
-end;
+ procedure _NormalizeGroup(GroupID: Integer);
+  var
+    I: Integer;
+    bExists: Boolean;
+ begin
+   bExists := False;
+   for I := 0 to ListViewMain.Groups.Count - 1 do begin
+     bExists := (ListViewMain.Groups[I].GroupID = GroupID);
+     if bExists then Break;
+   end;
+   if not bExists then XMLCreateGroup(ICSLanguagesGroups.CurrentStrings[MaxInt - GroupID], GroupID, False);
+ end;
 
-procedure TfrmMain.NotificationCenter1ReceiveLocalNotification(Sender: TObject; ANotification: TNotification);
 begin
-  inherited;
-//  Caption := ANotification.Title;
+  _NormalizeGroup(APP_ARGROUP_ID_FAVORITES);
+  _NormalizeGroup(APP_ARGROUP_ID_GENERAL);
+  _NormalizeGroup(APP_ARGROUP_ID_RECYCLE_BIN);
 end;
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -1380,7 +1412,7 @@ begin
     (Sender as TMenuItem).Add(MI);
     MI := TMenuItem.Create(Self);
     MI.Action := ActionMoveToFavorites;
-    MI.ImageIndex := ListViewMain.Groups[GetGroupIndex(APP_ARGROUP_ID_FAVORITES)].TitleImage;
+    MI.ImageIndex := -1;//ListViewMain.Groups[GetGroupIndex(APP_ARGROUP_ID_FAVORITES)].TitleImage;
     (Sender as TMenuItem).Add(MI);
     MI := TMenuItem.Create(Self);
     MI.Caption := '-';
