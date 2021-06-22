@@ -345,7 +345,7 @@ function ARCheckSystem: TSystemCheckResult;
 implementation
 
 uses
-  WinINet, ActiveX, ShlObj, uCommonTools, ShellAPI, uRegLite, uXMLTools, uRegistry, uWinSocket;
+  WinINet, ActiveX, ShlObj, uCommonTools, ShellAPI, uRegLite, uXMLTools, uRegistry, uWinSocket, System.IOUtils;
 
 { --- }
 
@@ -453,7 +453,7 @@ function CreateCMDParamFile(const FileNamePart, ContentString: String): String;
  var SS: TStringStream;
 begin
   Result := icsGetTempFileName('.tmp');
-  Result := IncludeTrailingPathDelimiter(ExtractFilePath(Result)) + FileNamePart + ExtractFileName(Result);
+  Result := IncludeTrailingPathDelimiter(ExtractFilePath(Result)) + icsReplaceInvalidFileNameChars(FileNamePart) + '_' + ExtractFileName(Result);
   SS := TStringStream.Create(ContentString);
   try
     SS.SaveToFile(Result);
@@ -1064,7 +1064,7 @@ begin
 
         FOwner.BuildARDataRec(AROD);
         if Pos(APP_TEMPLATE_PARAMFILE1, AROD.CMDParams) > 0 then begin
-          ParamsFileName1 := CreateCMDParamFile(AROD.Username, AROD.DefaultParamsStrings1);
+          ParamsFileName1 := CreateCMDParamFile(AROD.Name, AROD.DefaultParamsStrings1);
           AROD.CMDParams := icsGetReplacedString(AROD.CMDParams, APP_TEMPLATE_PARAMFILE1, ParamsFileName1);
         end;
 

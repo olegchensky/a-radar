@@ -13,7 +13,7 @@ UninstallDisplayIcon={app}\aradar.exe
 UninstallDisplayName=A-Radar
 OutputDir=C:\Temp
 OutputBaseFilename=aradar_setup
-SourceDir="d:\Programs\A-Radar\Win64\Release\"
+SourceDir="d:\Programs\A-Radar\"
 ShowLanguageDialog=no
 Compression=lzma2/ultra64
 SolidCompression=yes
@@ -39,8 +39,8 @@ ArchitecturesInstallIn64BitMode=x64
 BeveledLabel=  Censka IT-Services
 
 [Files]
-Source: "aradar.x32.exe"; DestDir: "{app}"; DestName: "aradar.exe"; Check: not Is64BitInstallMode; Flags: ignoreversion overwritereadonly 32bit
-Source: "aradar.x64.exe"; DestDir: "{app}"; DestName: "aradar.exe"; Check: Is64BitInstallMode; Flags: ignoreversion overwritereadonly 64bit
+Source: "Win32\Release\aradar.x32.exe"; DestDir: "{app}"; DestName: "aradar.exe"; Check: not Is64BitInstallMode; Flags: ignoreversion overwritereadonly 32bit
+Source: "Win64\Release\aradar.x64.exe"; DestDir: "{app}"; DestName: "aradar.exe"; Check: Is64BitInstallMode; Flags: ignoreversion overwritereadonly 64bit
 
 [Icons]
 Name: "{group}\A-Radar"; Filename: "{app}\aradar.exe"; WorkingDir: "{app}"
